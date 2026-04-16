@@ -1,11 +1,10 @@
 # icon-replacement-tabler
-Replace depreceated icons (Streamline, FontAwesome, PrimeIcons) with Tabler icons
+Replace depreceated icons (Streamline, FontAwesome) with Tabler icons
 
 This repository contains information and AI directions for the replacement of depreceated icon libraries.  
 The depreceated icon libraries are
 - [Streamline Icons](https://www.streamlinehq.com/)
 - [FontAwesome icons](https://fontawesome.com/v6/icons/)
-- [PrimeIcons](https://showcase.primefaces.org/icons.xhtml?jfwid=3d214)
 
 The icons of those libraries should be replaced with the new Tabler icons
 - [Tabler icons](https://tabler.io/icons)
