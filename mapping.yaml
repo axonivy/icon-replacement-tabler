@@ -1,0 +1,4 @@
+# Example - Replace with most current mapping as described in README
+si si-add: ti ti-plus
+si si-add-circle: ti ti-circle-plus
+si si-add-small: ti ti-plus
