@@ -4,10 +4,11 @@
 Replace icon CSS classes in the codebase using the provided icon inventory and mapping. Create a dedicated feature branch first, then perform a one-time replacement only within the approved root folders.
 
 ## Inputs
-- `all-old-icons.txt`
+- `all-old-icons.csv`
   - Contains all known old icon CSS classes, one per line.
-- `mapping.yaml`
+- `mapping_si.csv`, `mapping_fa.csv`
   - Contains the mapping from old icon classes to new icon classes.
+  - Combine them for a full list of all mappings available.
   - Each key is an old icon CSS class and each value is the corresponding new icon CSS class.
 - `ROOT_FOLDERS`
   - Only search and modify files inside these folders:
@@ -25,7 +26,7 @@ Replace icon CSS classes in the codebase using the provided icon inventory and m
 Create a dedicated branch for this work before making any changes.
 
 ### 2. Search for old icon classes
-Find all exact matches of the old icon classes listed in `all-old-icons.txt` within files under `ROOT_FOLDERS`.
+Find all exact matches of the old icon classes listed in `all-old-icons.csv` within files under `ROOT_FOLDERS`.
 
 Include relevant file types such as:
 - source files
@@ -42,7 +43,7 @@ Group all matches by file and record every occurrence of each old icon class.
 
 ### 4. Resolve replacements
 For each found old icon class:
-- check whether a replacement exists in `mapping.yaml`
+- check whether a replacement exists in `mapping_si.csv` or `mapping_fa.csv`
 - if a mapping exists, record the old → new replacement pair
 - if no mapping exists, record that no replacement is available
 
