@@ -10,9 +10,9 @@ The icons of those libraries should be replaced with the new Tabler icons
 - [Tabler icons](https://tabler.io/icons)
 
 ## Resources
-- HTML dialog example with a showcase of all icons: https://nightly.demo.ivyteam.io/demo-app/1/faces/view/html-dialog-demos/icons.xhtml-
-- Jira Epic: https://axon-ivy.atlassian.net/browse/XIVY-18409
-- Confluence: https://axon-ivy.atlassian.net/wiki/spaces/XIVY/pages/458752001/Migrate+to+Tabler+icons
+- AxonIvy Market HTML dialog example with a showcase of all icons. See project `html-dialog`: https://github.com/axonivy/demo-projects
+- Depreceation page: https://dev.axonivy.com/features/deprecation
+- Community post: TODO
 
 ## How to use
 
