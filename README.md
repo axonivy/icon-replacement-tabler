@@ -18,7 +18,7 @@ The icons of those libraries should be replaced with the new Tabler icons
 
 `plan_template.md` describes an execution plan which can be handed over to an AI agent to execute the replacement. Due to the variability in project structures, there is no hardcoded conversion file.
 
-1. Copy `all-old-icons.csv` to your project root - Contains a static list of all potential old icon CSS classes. **No need to modify**.
+1. Copy `all_old_icons.csv` to your project root - Contains a static list of all potential old icon CSS classes. **No need to modify**.
 2. Copy `mapping_si.csv` and `mapping_fa.csv` to your project root - Contains a compiled list of known mappings to matching Tabler icons. **If any mapping is missing, add it after copy**.
     - There is also a mapping file for PrimeIcons `mapping_pi.csv`, you do not have to use this file.
 3. Copy `plan_template.md` to your project root as `plan.md`
