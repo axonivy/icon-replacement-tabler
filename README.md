@@ -12,7 +12,7 @@ The icons of those libraries should be replaced with the new Tabler icons
 ## Resources
 - AxonIvy Market HTML dialog example with a showcase of all icons. See project `html-dialog`: https://github.com/axonivy/demo-projects
 - Deprecation page: https://dev.axonivy.com/features/deprecation
-- Community post: TODO
+- Community post: https://community.axonivy.com/d/1225-icon-library-update-in-axon-ivy-lts-14
 
 ## How to use
 
