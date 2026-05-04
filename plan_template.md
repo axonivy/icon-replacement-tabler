@@ -1,34 +1,38 @@
 # CSS Icon Class Replacement — Executor Agent Task
 
 ## Objective
-Replace icon CSS classes in the codebase using the provided icon inventory and mapping. Create a dedicated feature branch first, then perform a one-time replacement only within the approved root folders.
+The agent should replace icon CSS classes in the codebase using the provided icon inventory and mapping. The agent should perform a one-time replacement only within the approved root folders. The result of the replacement must be documented in a report which details all found files where a term was found, the term found and whether or not they were replaced with a term from the mapping.
 
 ## Inputs
 - `all_old_icons.csv`
   - Contains all known old icon CSS classes, one per line.
 - `mapping_si.csv`, `mapping_fa.csv`
-  - Contains the mapping from old icon classes to new icon classes.
-  - Combine them for a full list of all mappings available.
-  - Each key is an old icon CSS class and each value is the corresponding new icon CSS class.
+  - Contain the mapping from old icon classes to new icon classes.
+  - The agent should combine them into a full list of all available mappings.
+  - Each key should be an old icon CSS class and each value should be the corresponding new icon CSS class.
 - `ROOT_FOLDERS`
-  - Only search and modify files inside these folders:
+  - The agent should only search and modify files inside these folders:
     - MYIVYPROJECT/
     - ...
 - `EXCLUDED_FOLDERS`
-  - Do not search or modify files inside these folders:
+  - The agent should not search or modify files inside these folders:
     - target/
     - src_generated/
     - ANYOTHERFOLDER
 
+## Tooling Constraints
+The agent should attempt to use helpful command-line tools and local utilities such as `python`, `python3`, `rg`, `grep`, and `sed` when available. The agent should verify that each tool exists before using it. If a tool is unavailable, the agent should not assume it can be installed and should instead proceed using the remaining available tools or a tool-free approach.
+
 ## Execution Steps
 
-### 1. Create a feature branch
-Create a dedicated branch for this work before making any changes.
+### 1. Create a feature branch (optional)
+The agent should check whether the root folder is a git project by checking for the existence of a `.git` folder. If the root folder is a git project, the agent should try to create a dedicated branch for this work before making any changes.
+If the agent fails for any reason, it should report the failure and skip this step.
 
 ### 2. Search for old icon classes
-Find all exact matches of the old icon classes listed in `all_old_icons.csv` within files under `ROOT_FOLDERS`.
+The agent should find all exact matches of the old icon classes listed in `all_old_icons.csv` within files under `ROOT_FOLDERS`.
 
-Include relevant file types such as:
+The agent should include relevant file types such as:
 - source files
 - templates
 - styles
@@ -36,43 +40,43 @@ Include relevant file types such as:
 - generated files
 - configuration files
 
-Do not search or modify anything under `EXCLUDED_FOLDERS`.
+The agent should not search or modify anything under `EXCLUDED_FOLDERS`.
 
 ### 3. Collect and group matches
-Group all matches by file and record every occurrence of each old icon class.
+The agent should group all matches by file and record every occurrence of each old icon class.
 
 ### 4. Resolve replacements
-For each found old icon class:
+For each found old icon class, the agent should:
 - check whether a replacement exists in `mapping_si.csv` or `mapping_fa.csv`
 - if a mapping exists, record the old → new replacement pair
 - if no mapping exists, record that no replacement is available
 
-### 5. Replace mapped icon classes
-Replace each old icon class with its mapped new icon class where a mapping exists.
+### 5. Report findings and replacements
+Before replacing anything, the agent should create a CSV report covering all found old icon classes, including:
+- file path
+- line number of found old icon within file
+- old icon class
+- if mapping was found the new icon, empty otherwise
+The report should not contain old icons that were not found in the project in order to keep the report readable.
 
-Preserve:
+### 6. Execute replacements
+The agent should replace each found old icon class with its mapped new icon class where a mapping exists.
+
+The agent should preserve:
 - surrounding formatting
 - whitespace
 - other class names in the same string or attribute
 
-Do not alter unrelated or similar strings.
-
-### 6. Report findings
-Provide a report covering all found old icon classes, including:
-- file location
-- old icon class
-- whether a mapping was found
-- whether a replacement was applied
-- whether no mapping exists
+The agent should not alter unrelated or similar strings.
 
 ### 7. Verify the result
-Re-scan the workspace to confirm:
+The agent should re-scan the workspace to confirm:
 - all mapped old icon classes have been removed
 - the new icon classes appear in the expected locations
 - no files under `EXCLUDED_FOLDERS` were changed
 
 ## Acceptance Criteria
-- All old icon classes with a mapping are replaced.
-- Any old icon classes without a mapping are reported but left unchanged.
-- No files under `EXCLUDED_FOLDERS` are modified.
-- The final report clearly lists all matches and actions taken.
+- The agent should replace all old icon classes with a mapping.
+- The agent should report any old icon classes without a mapping and leave them unchanged.
+- The agent should not modify any files under `EXCLUDED_FOLDERS`.
+- The agent’s final report should clearly list all matches and actions taken.
