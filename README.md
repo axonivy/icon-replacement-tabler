@@ -24,7 +24,7 @@ The icons of those libraries should be replaced with the new Tabler icons
 3. Copy `plan_template.md` to your project root as `plan.md`
 4. Adjust `plan.md` section ROOT_FOLDERS in section "Resources". Specify which folders in your project should be considered for replacement.
 5. Adjust `plan.md` section EXCLUDED_FOLDERS in section "Resources". Specify which folders should be excluded for replacement. Example: "target/".
-6. Hand over to the AI agent for execution.
+6. Hand over to the AI agent for execution. Example prompt: `Execute this plan, specified in ./plan.md`.
 
 ## Caveats
 The concrete outcome depends on the AI agent's implementation. However, it is very likely that not all occurrences will be found and replaced perfectly, since the compilation of the CSS icon classes can be arbitrarily nested within source files and can become complex.  
